@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบแจ้งซ่อม Online</title>
+    <title>สั่งเบิก PPE ของ title </title>
     <style>
         html,
         body {
@@ -33,6 +33,7 @@
             let displayName = profile.displayName;
             let pictureUrl = profile.pictureUrl;
             let url = "https://script.google.com/macros/s/AKfycbzvw9Y1rftvfyfxlpXdAay0k9omH3VJqCXYA70m1OQ89MIWSeRj3UypSRJef0TPMzkw/exec?userId=" + userId + "&displayName=" + displayName + "&pictureUrl=" + pictureUrl;
+            var title = displayName
             document.getElementById("formframe").src = url;
         }).catch(err => console.error(err));
     }
