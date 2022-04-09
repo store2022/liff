@@ -21,7 +21,7 @@
             let userId = profile.userId;
             let displayName = profile.displayName;
             let pictureUrl = profile.pictureUrl;
-            let url = "https://script.google.com/macros/s/AKfycbzvw9Y1rftvfyfxlpXdAay0k9omH3VJqCXYA70m1OQ89MIWSeRj3UypSRJef0TPMzkw/exec?userId=" + userId + "&displayName=" + displayName + "&pictureUrl=" + pictureUrl;
+            let url = "https://script.google.com/macros/s/AKfycbwEzEmtvICsk8-30hrps1zACxDHgLztPV1EDAdN9IBXHWHpa8mSBPnSQ3MUAASSxtIK/exec?userId=" + userId + "&displayName=" + displayName + "&pictureUrl=" + pictureUrl;
             var title = '<?= displayName ?>' 
             document.getElementById("formframe").src = url;
         }).catch(err => console.error(err));
