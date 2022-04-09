@@ -22,7 +22,13 @@
     </style>
 </head>
 
-<body>
+<body
+      <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
+  <button onclick="openWindow()">Open Window</button>
+  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
+  <button id="btnLogOut" onclick="logOut()">Log Out</button>
+  <button id="btnClose" onclick="closed()">Close</button>
     <iframe id="formframe" src="" frameborder="0"></iframe>
 </body>
 <script src="https://static.line-scdn.net/liff/edge/versions/2.15.0/sdk.js"></script>
