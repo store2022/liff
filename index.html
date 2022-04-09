@@ -28,26 +28,7 @@
 <script src="https://static.line-scdn.net/liff/edge/versions/2.15.0/sdk.js"></script>
 <script>
     
-    function runApp() {
-        liff.getProfile().then(profile => {
-            let userId = profile.userId;
-            let displayName = profile.displayName;
-            let pictureUrl = profile.pictureUrl;
-            let url = "https://script.google.com/macros/s/AKfycbzvw9Y1rftvfyfxlpXdAay0k9omH3VJqCXYA70m1OQ89MIWSeRj3UypSRJef0TPMzkw/exec?userId=" + userId + "&displayName=" + displayName + "&pictureUrl=" + pictureUrl;
-            var title = '<?= displayName ?>' 
-            document.getElementById("formframe").src = url;
-        }).catch(err => console.error(err));
-    }
-
-    liff.init({ liffId: "1653945863-vm5g4V39" }, () => {
-        if (liff.isLoggedIn()) {
-            runApp();
-        } else {
-            liff.login();
-        }
-    }, err => console.error(err.code, error.message));
-
-    
+     
     function createUniversalLink() {
       const link1 = liff.permanentLink.createUrl()
       document.getElementById("universalLink1").append(link1)
@@ -144,22 +125,30 @@
       }
     }
 
-    async function main() {
-      liff.ready.then(() => {
-        document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-        if (liff.isLoggedIn()) {
-          getEnvironment()
-          getUserProfile()
-          getContext()
-          getFriendship()
-          createUniversalLink()
-        } else {
-          liff.login()
-        }
-      })
-      await liff.init({ liffId: "1653945863-bPq41E9P" })
+        
+ function runApp() {
+        liff.getProfile().then(profile => {
+            let userId = profile.userId;
+            let displayName = profile.displayName;
+            let pictureUrl = profile.pictureUrl;
+            let url = "https://script.google.com/macros/s/AKfycbzvw9Y1rftvfyfxlpXdAay0k9omH3VJqCXYA70m1OQ89MIWSeRj3UypSRJef0TPMzkw/exec?userId=" + userId + "&displayName=" + displayName + "&pictureUrl=" + pictureUrl;
+            var title = '<?= displayName ?>' 
+            document.getElementById("formframe").src = url;
+        }).catch(err => console.error(err));
     }
-    main()
+
+    liff.init({ liffId: "1653945863-vm5g4V39" }, () => {
+        if (liff.isLoggedIn()) {
+            runApp();
+            getEnvironment()
+            getUserProfile()
+            getContext()
+            getFriendship()
+            createUniversalLink()
+        } else {
+            liff.login();
+        }
+    }, err => console.error(err.code, error.message));
 
   </script>
 </script>
