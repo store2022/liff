@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>closed</title>
+  
+</head>
+<body>
+    <!-- <script src="js/vconsole.min.js"></script> -->
+  <!-- <script>
+    var vConsole = new VConsole()
+    console.log("Hello World!")
+  </script> -->
+
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.15.0/sdk.js"></script>>
+  <script>
+      function closed() {
+      liff.closeWindow()
+    }
+   
+    async function sendMsg() {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          {
+            "type": "sticker",
+            "stickerId": 1,
+            "packageId": 1
+          }
+        ])
+        alert("Message sent")
+      }
+    }
+
+     liff.init({ liffId: "1653945863-vm5g4V39" }, () => {
+        if (liff.isLoggedIn()) {
+            closed();
+        } else {
+            liff.login();
+        }
+    }, err => console.error(err.code, error.message));
+
+    
+  </script>
+</body>
+</html>
