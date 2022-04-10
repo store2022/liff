@@ -7,22 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPE Order</title>
     <link rel="shortcut icon" type="image/png" href="https://cdn-icons.flaticon.com/png/512/4647/premium/4647544.png?token=exp=1649491803~hmac=aa318fc5fe46d2ff892cae58f6cc3a4b"/>
-    <link rel="stylesheet" href="css/style.css" media="all">
-    
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
-<body
-      <iframe id="formframe" src="" frameborder="0"></iframe>
+<body>
+    <iframe id="formframe" src="" frameborder="0"></iframe>
 </body>
 <script src="https://static.line-scdn.net/liff/edge/versions/2.15.0/sdk.js"></script>
-<script>   
-  function runApp() {
+<script>
+    
+    function runApp() {
         liff.getProfile().then(profile => {
             let userId = profile.userId;
             let displayName = profile.displayName;
             let pictureUrl = profile.pictureUrl;
             let url = "https://script.google.com/macros/s/AKfycbwEzEmtvICsk8-30hrps1zACxDHgLztPV1EDAdN9IBXHWHpa8mSBPnSQ3MUAASSxtIK/exec?userId=" + userId + "&displayName=" + displayName + "&pictureUrl=" + pictureUrl;
-            var title = '<?= displayName ?>' 
             document.getElementById("formframe").src = url;
         }).catch(err => console.error(err));
     }
@@ -35,5 +46,6 @@
         }
     }, err => console.error(err.code, error.message));
 
-  </script>
+</script>
+
 </html>
