@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ลงทะเบียนใช้งานกับ line</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" id="demo">
+				<span class="contact100-form-title">
+					ลงทะเบียน
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">ชื่อผู้ใช้</span>
+					<input class="input100" type="text" name="name" id="fn" placeholder="ใส่ชื่อของคุณ">
+					<span class="focus-input100"></span>
+				</div>
+
+				<!-- <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+					<span class="focus-input100"></span>
+				</div> -->
+
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">หน่วยงาน</span>
+					<div>
+						<select class="selection-2" name="service" id="ln">
+							<option>เลือกหน่วยงาน</option>
+							<option value="Operation">Operation</option>
+                			<option value="KNT">KNT</option>
+                			<option value="Sodexo">Sodexo</option>							
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 input100-select" id="position">
+					<span class="label-input100">ตำแหน่งงาน</span>
+					<div>
+						<select class="selection-2" name="budget">
+							<option>เลือกตำแหน่งงาน</option>
+							<option value="Packing">Packing</option>
+							<option value="Unloading">Unloading</option>
+							<option value="พ่อบ้าน">พ่อบ้าน</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">หมายเหตุ</span>
+					<textarea class="input100" name="message" id="tel" placeholder="Your message here..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" onclick="reg()">
+							<span>
+								ลงทะเบียน
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+  
+
+$(document).ready(function() {
+        $("#ln").change(function() {
+            if ($("#ln").val() == "Operation") {
+                $("#position").hide()
+            } else {
+                $("#position").show()
+            }
+        })
+    }); 
+
+
+window.onload = function() {
+  initializeLiff('1653945863-bPq41E9P');
+
+}
+
+function initializeLiff(myLiffId) {
+    liff
+        .init({
+            liffId: myLiffId
+        });
+}
+
+var x = document.getElementById("demo");
+
+
+function reg() {
+
+var fn = document.getElementById("fn").value;
+var ln = document.getElementById("ln").value;
+var nn = document.getElementById("nn").value;
+var tel = document.getElementById("tel").value;
+     liff.getProfile().then(function(profile) {
+            var uid = profile.userId;
+            var dis = profile.displayName;
+            var pic = profile.pictureUrl;
+        var xos = liff.getOS();
+  x.innerHTML = " กำลังลงทะเบียน... ";
+var xmlhttp = new XMLHttpRequest();
+        var theUrl = "https://script.google.com/macros/s/AKfycbwPTAOOxc2qTuOmiokyt7xS_beedM_LSk1bA8_bmeIrb1YhHmFBKlt_bUeEMEvzhBQ5Gw/exec?fn="+fn+"&ln="+ln+"&nn="+nn+"&tel="+tel+"&uid="+uid+"&dis="+dis+"&pic="+pic;
+        xmlhttp.open('GET', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
+        liff.closeWindow()
+      }});  
+}
+
+</script>
+
+</body>
+</html>
