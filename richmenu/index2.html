@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+      </style>
+    <title>ลงทะเบียน</title>
+  </head>
+  <body>
+    <center><h1>ลงทะเบียน</h1></center>
+
+    <div class="container">
+      <form id="demo">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fn" name="firstname" placeholder="Your name..">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="ln" name="lastname" placeholder="Your last name..">
+          </div>
+        </div>
+        <div class="row" id="position">
+          <div class="col-25">
+            <label for="country">Country</label>
+          </div>
+          <div class="col-75" >
+            <select id="nn" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Subject</label>
+          </div>
+          <div class="col-75">
+            <textarea id="tel" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-success" onclick="reg()">ลงทะเบียน</button>
+        </div>
+      </form>
+    </div>
+    
+
+<!-- <p>ชื่อผู้ใช้</p><input type="text" id="fn" /> -->
+<!-- <p>หน่วยงาน</p><select name="เลือกหน่วยงาน" id="ln" >
+                <option value="Operation">Operation</option>
+                <option value="KNT">KNT</option>
+                <option value="Sodexo">Sodexo</option>
+                </select>                 -->
+    <!-- <div id="position">
+                <p>ตำแหน่งงาน</p><select name="ตำแหน่งงาน" id="nn">
+                <option value="Operation">Packing</option>
+                <option value="KNT">Unloading</option>
+                <option value="Sodexo">พ่อบ้าน</option>
+                </select>
+    </div> -->
+
+<!-- <p>Tel</p><input type="tel" id="tel" /> -->
+<!-- </br></br> -->
+<!-- <button type="button" class="btn btn-success" onclick="reg()">ลงทะเบียน</button> -->
+
+<!-- <p id="demo"></p> -->
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+<script>
+
+$(document).ready(function() {
+        $("#ln").change(function() {
+            if ($("#ln").val() == "Operation") {
+                $("#position").hide()
+            } else {
+                $("#position").show()
+            }
+        })
+    }); 
+
+
+window.onload = function() {
+  initializeLiff('1653945863-bPq41E9P');
+
+}
+
+function initializeLiff(myLiffId) {
+    liff
+        .init({
+            liffId: myLiffId
+        });
+}
+
+var x = document.getElementById("demo");
+
+
+function reg() {
+
+var fn = document.getElementById("fn").value;
+var ln = document.getElementById("ln").value;
+var nn = document.getElementById("nn").value;
+var tel = document.getElementById("tel").value;
+     liff.getProfile().then(function(profile) {
+            var uid = profile.userId;
+            var dis = profile.displayName;
+            var pic = profile.pictureUrl;
+        var xos = liff.getOS();
+  x.innerHTML = " กำลังลงทะเบียน... ";
+var xmlhttp = new XMLHttpRequest();
+        var theUrl = "https://script.google.com/macros/s/AKfycbwPTAOOxc2qTuOmiokyt7xS_beedM_LSk1bA8_bmeIrb1YhHmFBKlt_bUeEMEvzhBQ5Gw/exec?fn="+fn+"&ln="+ln+"&nn="+nn+"&tel="+tel+"&uid="+uid+"&dis="+dis+"&pic="+pic;
+        xmlhttp.open('GET', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
+        liff.closeWindow()
+      }});  
+}
+
+</script>
+    </body>
+</html>
