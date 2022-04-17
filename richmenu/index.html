@@ -79,7 +79,7 @@
             <div class="inputbox"> <input type="text" name="name" id="nn" class="form-control" required> <span>Email</span> </div>
             <div class="inputbox"> <input type="text" name="name" id="tel"class="form-control" required> <span>Phone</span> </div> 
             <!-- <button type="button" class="btn btn-success" onclick="reg()">ลงทะเบียน</button> -->
-            <button class="btn btn-warning btn-block" onclick="reg()">ลงทะเบียน</button>
+            <button type="submit" class="btn btn-warning btn-block" >ลงทะเบียน</button>
         </form>
     </div>
     <!-- <center>
@@ -112,7 +112,7 @@ function initializeLiff(myLiffId) {
 var x = document.getElementById("demo");
 
 
-function reg() {
+function submitForm() {
 
 var fn = document.getElementById("fn").value;
 var ln = document.getElementById("ln").value;
