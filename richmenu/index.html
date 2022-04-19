@@ -16,11 +16,25 @@
 <p>TEST</p>
 
 <p>First Name</p><input type="text" id="fn" />
-<p>Last Name</p><input type="text" id="ln" />
-<p>NickName</p><input type="text" id="nn" />
+<p>Last Name</p>
+<select class="form-control"  id="ln" name="agency" onChange=showHide() required> 
+    <option value="0"><span>เลือก หน่วยงาน</span></option>
+    <option value="Operation">Operation</option>
+    <option value="KNT">KNT</option>
+    <option value="Sodexo">Sodexo</option>
+    </select>
+    <!-- <input type="text" id="ln" /> -->
+<p>NickName</p>
+<select class="form-control"  id="nn" name="position" required> 
+    <option value="0"><span>เลือก ตําแหน่งงาน</span></option>
+    <option value="Packing">Packing</option>
+    <option value="Unloading">Unloading</option>
+    <option value="พ่อบ้าน">พ่อบ้าน</option>
+    </select>
+    <!-- <input type="text" id="nn" /> -->
 <p>Tel</p><input type="tel" id="tel" />
 </br></br>
-<button type="button" class="btn btn-success" onclick="reg()">ลงทะเบียน</button>
+<button type="button" class="btn btn-warning btn-block" onclick="reg()">ลงทะเบียน</button>
 
 <p id="demo"></p>
 </center>
@@ -40,6 +54,41 @@ function initializeLiff(myLiffId) {
 
 var x = document.getElementById("demo");
 
+function showHide() {
+    let agency = document.getElementById('ln')
+    if (agency.value == "Operation") {
+        document.getElementById('position').style.display = 'none'
+    } else {
+        document.getElementById('position').style.display = 'block'
+    }
+}
+
+function fncSubmit() {
+	if(document.form1.name.value == "")
+	{
+		alert('กรุณาใส่ ชื่อ - สกุล');
+		document.form1.name.focus();
+		return false;
+	}	
+    
+    if(document.form1.agency.value  == "0"  )
+    {
+        alert('กรุณาเลือก หน่วยงาน');
+        return false;
+    }
+    
+    if(document.form1.agency.value  == "Operation"  )
+    {
+    reg();
+    }
+
+    if(document.form1.position.value  == "0"  )
+    {
+        alert('กรุณาเลือก ตําแหน่งงาน');
+        return false;
+    }
+	 reg();
+}
 
 function reg() {
 
