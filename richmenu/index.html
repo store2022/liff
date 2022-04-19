@@ -73,7 +73,7 @@
   <body>
     <div class="card">
         <h3>ลงทะเบียน</h3>
-        <form method="post" name="form1" onSubmit="JavaScript:return fncSubmit();">
+        <form name="form1" >
             <div class="inputbox"> <input type="text" name="name" id="fn" class="form-control" required> <span>ชื่อ - สกุล</span> </div>
             
           <div class="inputbox"> <select class="form-control"  id="ln" name="agency" onChange=showHide() required> 
@@ -89,9 +89,9 @@
                     <option value="พ่อบ้าน">พ่อบ้าน</option>
                     </select> </div>
 <!--             <div class="inputbox"> <input type="text" name="name" id="tel"class="form-control" required> <span>Phone</span> </div>  -->
-            <!-- <button type="button" class="btn btn-success" onclick="reg()">ลงทะเบียน</button> -->
+            <button type="button" class="btn btn-success" onclick='fncSubmit()'>ลงทะเบียน</button>
             <!--  <button type="submit" class="btn btn-warning btn-block" >ลงทะเบียน</button> -->
-            <input class="btn btn-warning btn-block" name="btnSubmit1" type="submit" value="ลงทะเบียน" >
+            <!-- <input class="btn btn-warning btn-block" name="btnSubmit1" type="submit" value="ลงทะเบียน" > -->
             <p id="demo"></p>
         </form>
     </div>
