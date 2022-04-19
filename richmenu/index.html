@@ -8,31 +8,35 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>ลงทะเบียน</title>
+    <title>ITDEV.win</title>
   </head>
   <body>
-    <div class="card">
-        <h3>ลงทะเบียน</h3>
-        
-            <div class="inputbox"> <input type="text" name="name" id="fn" class="form-control" required> <span>ชื่อ - สกุล</span> </div>
-            
-          <div class="inputbox"> <select class="form-control"  id="ln" name="agency" onChange=showHide() required> 
-                    <option value="0"><span>เลือก หน่วยงาน</span></option>
-                    <option value="Operation">Operation</option>
-                    <option value="KNT">KNT</option>
-                    <option value="Sodexo">Sodexo</option>
-                    </select> </div>
-          <div class="inputbox" id="position" > <select class="form-control"  id="nn" name="position" required> 
-                    <option value="0"><span>เลือก ตําแหน่งงาน</span></option>
-                    <option value="Packing">Packing</option>
-                    <option value="Unloading">Unloading</option>
-                    <option value="พ่อบ้าน">พ่อบ้าน</option>
-                    </select> </div>
-                    <button type="button" class="btn btn-warning btn-block" onclick="fncSubmit()">ลงทะเบียน</button>
-                    <center><p id="demo"></p></center>
-        
-    </div>
+    <center>
+    <h1>Register</h1>
+<p>TEST</p>
 
+<p>First Name</p><input type="text" id="fn" />
+<p>Last Name</p><select class="form-control"  id="ln" name="agency" onChange=showHide() required> 
+    <option value="0"><span>เลือก หน่วยงาน</span></option>
+    <option value="Operation">Operation</option>
+    <option value="KNT">KNT</option>
+    <option value="Sodexo">Sodexo</option>
+    </select>
+<!-- <input type="text" id="ln" /> -->
+
+<p>NickName</p><select class="form-control"  id="nn" name="position" required> 
+    <option value="0"><span>เลือก ตําแหน่งงาน</span></option>
+    <option value="Packing">Packing</option>
+    <option value="Unloading">Unloading</option>
+    <option value="พ่อบ้าน">พ่อบ้าน</option>
+    </select>
+<!-- <input type="text" id="nn" /> -->
+<p>Tel</p><input type="tel" id="tel" />
+</br></br>
+<button type="button" class="btn btn-success" onclick="fncSubmit()">ลงทะเบียน</button>
+
+<p id="demo"></p>
+</center>
 
 <script>
 window.onload = function() {
@@ -45,17 +49,6 @@ function initializeLiff(myLiffId) {
         .init({
             liffId: myLiffId
         });
-}
-
-var x = document.getElementById("demo");
-
-function showHide() {
-    let agency = document.getElementById('ln')
-    if (agency.value == "Operation") {
-        document.getElementById('position').style.display = 'none'
-    } else {
-        document.getElementById('position').style.display = 'block'
-    }
 }
 
 function fncSubmit() {
@@ -82,8 +75,11 @@ function fncSubmit() {
         alert('กรุณาเลือก ตําแหน่งงาน');
         return false;
     }
-	reg();
+       reg();
 }
+
+var x = document.getElementById("demo");
+
 
 function reg() {
 
@@ -98,7 +94,7 @@ var tel = document.getElementById("tel").value;
         var xos = liff.getOS();
   x.innerHTML = " กำลังลงทะเบียน... ";
 var xmlhttp = new XMLHttpRequest();
-        var theUrl = "https://script.google.com/macros/s/AKfycbwPTAOOxc2qTuOmiokyt7xS_beedM_LSk1bA8_bmeIrb1YhHmFBKlt_bUeEMEvzhBQ5Gw/exec?fn="+fn+"&ln="+ln+"&nn="+nn+"&uid="+uid+"&dis="+dis+"&pic="+pic;
+        var theUrl = "https://script.google.com/macros/s/AKfycbwPTAOOxc2qTuOmiokyt7xS_beedM_LSk1bA8_bmeIrb1YhHmFBKlt_bUeEMEvzhBQ5Gw/exec?fn="+fn+"&ln="+ln+"&nn="+nn+"&tel="+tel+"&uid="+uid+"&dis="+dis+"&pic="+pic;
         xmlhttp.open('GET', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
