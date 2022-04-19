@@ -8,10 +8,92 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>ITDEV.win</title>
+    <style>
+        body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #157ce4, #456be6)
+}
+
+.card {
+    width: 400px;
+    padding: 80px 50px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2)
+}
+
+.card h3 {
+    color: #111;
+    margin-bottom: 50px;
+    border-left: 5px solid #e59438;
+    padding-left: 10px;
+    line-height: 1em
+}
+
+.inputbox {
+    margin-bottom: 50px
+}
+
+.inputbox input {
+    position: absolute;
+    width: 300px;
+    background: transparent
+}
+
+.inputbox input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #157ce4;
+    outline: 0;
+    box-shadow: none
+}
+
+.inputbox span {
+    position: relative;
+    top: 7px;
+    left: 1px;
+    padding-left: 10px;
+    display: inline-block;
+    transition: 0.5s
+}
+
+.inputbox input:focus~span {
+    transform: translateX(-10px) translateY(-32px);
+    font-size: 12px
+}
+
+.inputbox input:valid~span {
+    transform: translateX(-10px) translateY(-32px);
+    font-size: 12px
+}
+    </style>
+    <title>ลงทะเบียน</title>
   </head>
   <body>
-    <center>
+	  <div class="card">
+          <h3>ลงทะเบียน</h3>
+        
+            <div class="inputbox"> <input type="text" name="name" id="fn" class="form-control" required> <span>ชื่อ - สกุล</span> </div>
+            <div class="inputbox"> <select class="form-control"  id="ln" name="agency" onChange=showHide() required> 
+                    <option value="0"><span>เลือก หน่วยงาน</span></option>
+                    <option value="Operation">Operation</option>
+                    <option value="KNT">KNT</option>
+                    <option value="Sodexo">Sodexo</option>
+                    </select> </div>
+          <div class="inputbox" id="position" > <select class="form-control"  id="nn" name="position" required> 
+                    <option value="0"><span>เลือก ตําแหน่งงาน</span></option>
+                    <option value="Packing">Packing</option>
+                    <option value="Unloading">Unloading</option>
+                    <option value="พ่อบ้าน">พ่อบ้าน</option>
+                    </select> </div>
+                    <button type="button" class="btn btn-warning btn-block" onclick="check()">ลงทะเบียน</button>
+                    <center><p id="demo"></p></center>
+        </div>
+	  
+<!--     <center>
     <h1>Register</h1>
 <p>TEST</p>
 
@@ -20,10 +102,10 @@
 <p>NickName</p><input type="text" id="nn" />
 <p>Tel</p><input type="tel" id="tel" />
 </br></br>
-<button type="button" class="btn btn-success" onclick="check()">ลงทะเบียน</button>
+<button type="button" class="btn btn-warning btn-block" onclick="check()">ลงทะเบียน</button>
 
 <p id="demo"></p>
-</center>
+</center> -->
 
 <script>
 window.onload = function() {
