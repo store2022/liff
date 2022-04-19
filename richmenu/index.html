@@ -23,13 +23,13 @@
     <option value="Sodexo">Sodexo</option>
     </select>
 <!-- <input type="text" id="ln" /> -->
-
+<div id="position">
 <p>NickName</p><select class="form-control"  id="nn" name="position" required> 
     <option value="0"><span>เลือก ตําแหน่งงาน</span></option>
     <option value="Packing">Packing</option>
     <option value="Unloading">Unloading</option>
     <option value="พ่อบ้าน">พ่อบ้าน</option>
-    </select>
+	</select> </div>
 <!-- <input type="text" id="nn" /> -->
 <p>Tel</p><input type="tel" id="tel" />
 </br></br>
@@ -50,7 +50,15 @@ function initializeLiff(myLiffId) {
             liffId: myLiffId
         });
 }
-
+function showHide() {
+    let agency = document.getElementById('ln')
+    if (agency.value == "Operation") {
+        document.getElementById('position').style.display = 'none'
+    } else {
+        document.getElementById('position').style.display = 'block'
+    }
+}
+	
 function fncSubmit() {
 	if(document.getElementById("fn").value == "")
 	{
@@ -65,9 +73,9 @@ function fncSubmit() {
         return false;
     }
         
-    if(document.getElementById("nn").value  == "Operation"  )
+    if(document.getElementById("ln").value  == "Operation"  )
     {
-        return reg;
+         reg;
     }
     
     if(document.getElementById("nn").value  == "0"  )
@@ -75,7 +83,7 @@ function fncSubmit() {
         alert('กรุณาเลือก ตําแหน่งงาน');
         return false;
     }
-       return reg;
+        reg;
 }
 
 var x = document.getElementById("demo");
