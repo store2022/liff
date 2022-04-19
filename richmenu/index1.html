@@ -40,23 +40,22 @@ function initializeLiff(myLiffId) {
 
 var x = document.getElementById("demo");
 
- function check() {
-   let name = document.getElementById("fn");
-	 let position = document.getElementById("ln");  
-        if( name.value == "" ) {
+function check() {
+	if(document.getElementById("fn").value == "")
+	{
 		alert('กรุณาใส่ ชื่อ - สกุล');
-		name.focus();                   
-            	return false;
-        }
-	     if( position.value == "0" ) {
-		alert('กรุณาเลือก หน่วยงาน');
-		position.focus();                   
-            	return false;
-        } else {
-                reg();
-            }
-	    
-    }
+		document.getElementById("fn").focus();
+		return false;
+	}	
+    
+    	if(document.getElementById("ln").value  == "0"  )
+    	{
+        	alert('กรุณาเลือก หน่วยงาน');
+		document.getElementById("ln").focus();
+        	return false;
+    	}
+        
+}
 
 function reg() {
   var fn = document.getElementById("fn").value;
