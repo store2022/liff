@@ -142,8 +142,8 @@ function check() {
 function reg() {
   var fn = document.getElementById("fn").value;
   var ln = document.getElementById("ln").value;
-  var nn = document.getElementById("nn").value;
-  var tel = document.getElementById("tel").value;
+ //var nn = document.getElementById("nn").value;
+ //var tel = document.getElementById("tel").value;
      liff.getProfile().then(function(profile) {
             var uid = profile.userId;
             var dis = profile.displayName;
@@ -151,7 +151,7 @@ function reg() {
         var xos = liff.getOS();
   x.innerHTML = " กำลังลงทะเบียน... ";
 var xmlhttp = new XMLHttpRequest();
-        var theUrl = "https://script.google.com/macros/s/AKfycbwPTAOOxc2qTuOmiokyt7xS_beedM_LSk1bA8_bmeIrb1YhHmFBKlt_bUeEMEvzhBQ5Gw/exec?fn="+fn+"&ln="+ln+"&nn="+nn+"&tel="+tel+"&uid="+uid+"&dis="+dis+"&pic="+pic;
+        var theUrl = "https://script.google.com/macros/s/AKfycbwPTAOOxc2qTuOmiokyt7xS_beedM_LSk1bA8_bmeIrb1YhHmFBKlt_bUeEMEvzhBQ5Gw/exec?fn="+fn+"&ln="+ln+"&uid="+uid+"&dis="+dis+"&pic="+pic;
         xmlhttp.open('GET', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
