@@ -13,7 +13,7 @@
   <body>
     <div class="card">
         <h3>ลงทะเบียน</h3>
-        <form name="form1" >
+        
             <div class="inputbox"> <input type="text" name="name" id="fn" class="form-control" required> <span>ชื่อ - สกุล</span> </div>
             
           <div class="inputbox"> <select class="form-control"  id="ln" name="agency" onChange=showHide() required> 
@@ -28,9 +28,9 @@
                     <option value="Unloading">Unloading</option>
                     <option value="พ่อบ้าน">พ่อบ้าน</option>
                     </select> </div>
-                    <button type="button" class="btn btn-warning btn-block" onclick="reg()">ลงทะเบียน</button>
+                    <button type="button" class="btn btn-warning btn-block" onclick="fncSubmit()">ลงทะเบียน</button>
                     <center><p id="demo"></p></center>
-        </form>
+        
     </div>
 
 
@@ -71,18 +71,17 @@ function fncSubmit() {
         alert('กรุณาเลือก หน่วยงาน');
         return false;
     }
-    
-    if((document.getElementById("ln").value  == "Operation"  )
+        
+    if(document.getElementById("nn").value  == "Operation"  )
     {
-    reg();
+        reg();
     }
-
-    if(document.getElementById("ln").value  == "0"  )
+    
+    if(document.getElementById("nn").value  == "Operation"  )
     {
         alert('กรุณาเลือก ตําแหน่งงาน');
         return false;
     }
-	 reg();
 }
 
 function reg() {
